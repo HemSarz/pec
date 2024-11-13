@@ -1,0 +1,16 @@
+name: Azure Role Assignment
+
+on:
+  workflow_dispatch:  # Trigger manually via GitHub UI
+
+jobs:
+  assign-roles:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Set up Azure CLI
+      uses: azure/setup-azurecli@v1  # Just setting up Azure CLI, no login here
+
+    - name: Run Role Assignment Script
+      run: |
+        pwsh ./assign_roles.ps1
