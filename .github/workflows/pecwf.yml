@@ -9,8 +9,8 @@ jobs:
 
     steps:
     - name: Set up Azure CLI
-      uses: azure/setup-azurecli@v1  # Just setting up Azure CLI, no login here
+      uses: azure/CLI@v1
 
     - name: Run Role Assignment Script
       run: |
-        pwsh ./assign_roles.ps1
+        pwsh ./PECWithAdminAgents/test.ps1
